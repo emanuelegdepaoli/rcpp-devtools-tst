@@ -1,27 +1,24 @@
 # R package - Rcpp
-- creare pacchetto con `devtools::create()`
-- predisporre pkg all'uso di rcpp con `usethis::use_rcpp()`
-- inserire come da messaggio stampato il codice nessario in <pkg-name>-package.R
-- modificare il codice rcpp in `src`:
-  - documentare le funzioni normalmente con roxygen, ma iniziando i commenti per
-    `//'` al posto di `#'`
-  - per esportare le funzioni, includere:
+- create pkg: `devtools::create()`
+- set pkg to use Rcpp: `usethis::use_rcpp()`
+- follow the help message and add the code to `R/<pkg-name>-package.R`
+- write your Rcpp code in `src/`:
+  - document functions with roxygen as usual but begin statements with `//'` 
+  - to export functions, include before functions declaration:
     ```
     //' @export
     // [[Rcpp::export]]
     ```
-    prima della funzione
-
+   
 # RcppArmadillo
-- inserire prima del codice .cpp anche:
+- add at the beginning of `.cpp` files:
    ```
    // [[Rcpp::depends(RcppArmadillo)]]
    #include <RcppArmadillo.h>
    ```
-- aggiornare DESCRIPTION
-  `usethis::use_package("RcppArmadillo", "LinkingTo")`
+- update `DESCRIPTION`: `usethis::use_package("RcppArmadillo", "LinkingTo")`
 
-- aggiungere file `Makevars` sotto `src/`:
+- add `Makevars` to `src/`:
   ```
   CXX_STD = CXX11
 
