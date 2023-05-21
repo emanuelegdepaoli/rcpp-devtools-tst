@@ -1,0 +1,16 @@
+Package: rcpptst
+Title: Test devtools-Rcpp-RcppArmadillo
+Version: 0.0.0.9000
+Authors@R: 
+    person("Emanuele", "Depaoli", , "emanueledepaoli1@gmail.com", role = c("aut", "cre"))
+Description: Prova per creare pkg che usa Rcpp e RcppArmadillo con devtools 
+License: private
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+LinkingTo: 
+    Rcpp,
+    RcppArmadillo
+Imports: 
+    Rcpp,
+    dplyr
